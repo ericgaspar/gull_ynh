@@ -18,7 +18,8 @@ ynh_script_progression "Building $app..."
 ynh_go_install
 
 pushd $install_dir/
-	ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o $install_dir/gull
+	make run
+	#ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o $install_dir/gull
 popd
 
 ynh_go_remove
