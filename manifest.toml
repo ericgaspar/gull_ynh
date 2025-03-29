@@ -2,15 +2,15 @@ packaging_format = 2
 
 id = "gull"
 name = "Gull"
-description.en = "Videoconferencing server that is easy to deploy"
-description.fr = "Serveur de visioconférence facile à déployer"
+description.en = "Simple, modern URL shortener"
+description.fr = "Raccourcisseur d'URL simple et moderne"
 
-version = "0.96.3~ynh1"
+version = "1.0~ynh1"
 
 maintainers = ["eric_G"]
 
 [upstream]
-license = "MIT"
+license = "MPL-2.0"
 website = "https://s.aeoly.us/"
 demo = "https://s.aeoly.us/"
 code = "https://github.com/aeolyus/gull"
