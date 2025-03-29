@@ -1,6 +1,5 @@
 [Unit]
-Description=Galène: videoconferencing server
-Documentation=https://galene.org
+Description=Gull: URL shortener
 After=network.target
 
 [Service]
@@ -11,7 +10,6 @@ Environment="PORT=__PORT__"
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/gull
 Restart=on-failure
-LimitNOFILE=65536
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
