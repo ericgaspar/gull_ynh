@@ -15,28 +15,13 @@ ynh_setup_source --dest_dir="$install_dir/"
 #=================================================
 ynh_script_progression "Building $app..."
 
-#ynh_go_install
-
-#pushd $install_dir/
-	#make run
-	#ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o $install_dir/gull
-#popd
-
 ynh_go_install
-#chmod u+x /etc/profile.d/goenv.sh
-#/etc/profile.d/goenv.sh
 
-GOCACHE=/opt/goenv/cache
-export GOCACHE
-pushd $install_dir
-make run
+pushd $install_dir/
+	#ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=1 go build -o $install_dir/gull
 popd
 
 ynh_go_remove
-
-chown -R "$app:$app" "$install_dir"
-
-#ynh_go_remove
 #ynh_safe_rm "$install_dir/build/"
 #ynh_safe_rm "$install_dir/build_ldap/"
 #ynh_safe_rm "$install_dir/.cache/"
