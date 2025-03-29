@@ -23,8 +23,8 @@ ynh_script_progression "Building $app..."
 #popd
 
 ynh_go_install
-chmod u+x /etc/profile.d/goenv.sh
-/etc/profile.d/goenv.sh
+#chmod u+x /etc/profile.d/goenv.sh
+#/etc/profile.d/goenv.sh
 
 GOCACHE=/opt/goenv/cache
 export GOCACHE
