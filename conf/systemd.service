@@ -8,7 +8,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 Environment="PORT=__PORT__"
-WorkingDirectory=__INSTALL_DIR__/live/
+WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/gull
 Restart=on-failure
 LimitNOFILE=65536
