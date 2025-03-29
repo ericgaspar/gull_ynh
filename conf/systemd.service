@@ -7,8 +7,9 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
+Environment="PORT=__PORT__"
 WorkingDirectory=__INSTALL_DIR__/live/
-ExecStart=__INSTALL_DIR__/live/galene -http "127.0.0.1:__PORT__" -insecure -turn __PUBLIC_IP4__:__PORT_TURN__ -udp-range 49152-65535 -groups __DATA_DIR__/groups -recordings __DATA_DIR__/recordings  -data __INSTALL_DIR__/live/data/ -static __INSTALL_DIR__/live/static
+ExecStart=__INSTALL_DIR__/gull
 Restart=on-failure
 LimitNOFILE=65536
 
