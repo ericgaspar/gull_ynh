@@ -1,0 +1,10 @@
+{
+    "canonicalHost": "__DOMAIN__",
+    "proxyURL": "https://__DOMAIN__",
+    "users": {
+        "__ADMIN__": {
+            "permissions": "admin",
+            "password": __PASSWORD_HASH__
+        }
+    }
+}
