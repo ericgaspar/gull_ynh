@@ -12,22 +12,10 @@ if ynh_hide_warnings yunohost service status $app >/dev/null; then
 	yunohost service remove $app
 fi
 
-if ynh_hide_warnings yunohost service status ${app}_ldap >/dev/null; then
-	yunohost service remove ${app}_ldap
-fi
 
 ynh_config_remove_systemd
-ynh_config_remove_systemd ${app}_ldap
 
 ynh_config_remove_nginx
-
-#=================================================
-# CLOSE A PORT
-#=================================================
-
-if yunohost firewall list | grep -q "\- 49152:65535"; then
-	ynh_hide_warnings yunohost firewall disallow UDP 49152:65535
-fi
 
 #=================================================
 # END OF SCRIPT

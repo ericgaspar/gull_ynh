@@ -1,7 +1,7 @@
 packaging_format = 2
 
-id = "galene"
-name = "Galène"
+id = "gull"
+name = "Gull"
 description.en = "Videoconferencing server that is easy to deploy"
 description.fr = "Serveur de visioconférence facile à déployer"
 
@@ -11,11 +11,9 @@ maintainers = ["eric_G"]
 
 [upstream]
 license = "MIT"
-website = "https://galene.org/"
-demo = "https://galene.org:8443/"
-admindoc = "https://galene.org/"
-userdoc = "https://galene.org/faq.html"
-code = "https://github.com/jech/galene"
+website = "https://s.aeoly.us/"
+demo = "https://s.aeoly.us/"
+code = "https://github.com/aeolyus/gull"
 
 [integration]
 yunohost = ">= 12.0.9"
@@ -23,7 +21,8 @@ helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
 
-ldap = true
+ldap = false
+
 sso = false
 
 disk = "50M"
@@ -35,63 +34,25 @@ ram.runtime = "50M"
     type = "domain"
 
     [install.init_main_permission]
-    help.en = "If Visitors enabled, Galène will be accessible by people who do not have an account. This can be changed later via the webadmin."
-    help.fr = "Si la permission Visiteurs est cochée, Galène sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
     type = "group"
     default = "visitors"
 
     [install.admin]
     type = "user"
 
-    [install.password]
-    help.en = "Set the administrator password (between 8 and 30 characters)"
-    help.fr = "Définissez le mot de passe administrateur (entre 8 et 30 caractères)"
-    type = "password"
-
-    [install.group_name]
-    ask.en = "Choose a name for the group you want to create"
-    ask.fr = "Choisissez un nom pour le groupe que vous voulez créer"
-    type = "string"
-    default = "public"
-    example = "public"
-
-    [install.group_description]
-    ask.en = "Choose a description for the group you want to create"
-    ask.fr = "Décrivez le groupe que vous souhaitez créer"
-    help.en = "Add a human-readable description of the group; this is displayed on the landing page for public groups."
-    help.fr = "Ajoutez une description du groupe; ceci est affiché sur la page de destination des groupes publics."
-    type = "string"
-    optional = true
-
 [resources]
 
 [resources.sources]
     [resources.sources.main]
-    url = "https://github.com/jech/galene/archive/refs/tags/galene-0.96.3.tar.gz"
-    sha256 = "c76e5b6c059b94d102c2b726ab144ba6a70bdde8135f6733893217172af5201a"
+    url = "https://github.com/aeolyus/gull/archive/7ffce480463d31fe0555f2c9d87737bfe1d11dcf.tar.gz"
+    sha256 = "1f8c23df6bfd401152bef0b2a27eee5d1982633c74bb75b2be1187689652114c"
     autoupdate.strategy = "latest_github_tag"
  
-    [resources.sources.ldap]
-    url = "https://github.com/jech/galene-ldap/archive/6de51be51aede731fbb803b81725b25e1822e10f.tar.gz"
-    sha256 = "9e20a081066c2a7ee593211e588361334c666383dfa213752797e968933a3f7e"
-    autoupdate.upstream = "https://github.com/jech/galene-ldap"
-    autoupdate.strategy = "latest_github_commit"
-
     [resources.system_user]
 
     [resources.install_dir]
-
-    [resources.data_dir]
-    subdirs = ["groups", "recordings"]
 
     [resources.permissions]
     main.url = "/"
 
     [resources.ports]
-    main.default = 8095
-    ldap.default = 8096
-    turn.default = 1194
-    turn.exposed = "Both"
-
-    [resources.apt]
-    packages = "jose"
