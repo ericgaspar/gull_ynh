@@ -39,7 +39,7 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-yunohost service add $app --description="Videoconferencing server"
+yunohost service add $app --description="URL shortener"
 
 #=================================================
 # START SYSTEMD SERVICE
